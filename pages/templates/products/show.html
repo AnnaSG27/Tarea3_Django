@@ -1,0 +1,18 @@
+<h1>{{ title }}</h1>
+
+<h3>{{ product.name }}</h3>
+
+{% if product.price > 2000 %}
+    <p style="color:red;">{{ product.price }}</p>
+{% else %}
+    <p>{{ product.price }}</p>
+
+<h4>Comments:</h4>
+
+{% for comment in product.comment_set.all %}
+    - {{ comment.description }}<br>
+{% empty %}
+    <p>No comments yet.</p>
+{% endfor %}
+
+{% endif %}

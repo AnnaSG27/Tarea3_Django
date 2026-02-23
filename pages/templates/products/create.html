@@ -1,0 +1,23 @@
+<h1>{{ title }}</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    <div>
+        <label>Name:</label>
+        {{ form.name }}
+    </div>
+
+    <div>
+        <label>Price:</label>
+        {{ form.price }}
+    </div>
+
+    <button type="submit">Save</button>
+</form>
+
+{% if form.errors %}
+    <div style="color:red;">
+        {{ form.errors }}
+    </div>
+{% endif %}
